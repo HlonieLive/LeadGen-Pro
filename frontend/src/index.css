@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-900: #0f172a; /* Ensure slate-900 is available if not by default, though it should be */
+}
+
+/* Custom aesthetic styles */
+body {
+  @apply bg-slate-900 text-white font-sans antialiased;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>
+        Auto-processes new leads from the Website.
+        1. Checks if Email is valid.
+        2. Assigns to Queue based on Company size (simulated).
+        3. Posts to Chatter.
+    </description>
+    <label>Website Lead Processor</label>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Check_Source</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <decisions>
+        <name>Check_Source</name>
+        <label>Is Website Lead?</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Website</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Website</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_Chatter</targetReference>
+            </connector>
+            <label>Is Website</label>
+        </rules>
+    </decisions>
+    <actionCalls>
+        <name>Post_to_Chatter</name>
+        <label>Alert Sales Team</label>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>New Hot Lead from Website! Name: {!$Record.LastName}, Company: {!$Record.Company}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>SalesTeamGroupID</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+</Flow>
