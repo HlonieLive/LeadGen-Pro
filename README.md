@@ -4,16 +4,11 @@
 
 **A company wants to:**
 
-    - Let visitors sign up on their React website.
-    
-    - Automatically add them to a Marketing Cloud email welcome sequence.
-    
-    - Push qualified leads into Salesforce CRM.
-    
-    - Use Flows + Apex to enrich and route leads.
-    
-    - Alert the sales team when a hot lead arrives.
-    
+    - Let visitors sign up on their React website.    
+    - Automatically add them to a Marketing Cloud email welcome sequence.    
+    - Push qualified leads into Salesforce CRM.    
+    - Use Flows + Apex to enrich and route leads.    
+    - Alert the sales team when a hot lead arrives.   
     - This mirrors real-world jobs you’ll see—especially for Backend Salesforce Developers.
 
 ## Tech Stack
@@ -21,21 +16,15 @@
 **Frontend:**
 
     - React (External Web App)
-
     - HTML, CSS, JavaScript
 
 **Marketing:**
 
     - Salesforce Marketing Cloud
-
     - Email Marketing
-
     - Lead Management
-
     - Campaign Management
-
     - Automation
-
     - Analytics
 **CRM:**
 
@@ -50,15 +39,18 @@
     - Service Console
 
 **Backend Logic:**
+
     - Apex
     - Visualforce Pages
 
 **Integration:**
+
     - REST APIs (OAuth 2.0)
     - Salesforce Connect
     - Salesforce Integration Cloud
 
 **Alerting:**
+
     - Salesforce Flow
     - Salesforce Apex
     - Salesforce Email Alerts
