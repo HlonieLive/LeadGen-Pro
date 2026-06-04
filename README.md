@@ -19,17 +19,26 @@
 ## Tech Stack
 
 **Frontend:**
+
     - React (External Web App)
+
     - HTML, CSS, JavaScript
 
 **Marketing:**
+
     - Salesforce Marketing Cloud
+
     - Email Marketing
+
     - Lead Management
+
     - Campaign Management
+
     - Automation
+
     - Analytics
 **CRM:**
+
     - Salesforce CRM (Sales Cloud)
     - Lead Management
     - Opportunity Management
